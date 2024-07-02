@@ -25,8 +25,4 @@
     <ProjectReference Include="..\..\Core\OnionArcAndAPI.Application\OnionArcAndAPI.Application.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Concretes\" />
-  </ItemGroup>
-
 </Project>

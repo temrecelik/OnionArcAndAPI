@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OnionArcAndAPI.Domain.Entities.Common;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
@@ -8,9 +9,9 @@ using System.Threading.Tasks;
 namespace OnionArcAndAPI.Application.Repositories
 {
     /*
-     IReadRepository veritabanında veri okuma ile alakalı servislerin ınterface'leri bulunur
+     IReadRepository veritabanında veri okuma ile alakalı servislerin ınterface'le
      */
-    public interface IReadRepository<T> :IRepository<T> where T : class
+    public interface IReadRepository<T> :IRepository<T> where T : BaseEntity
     {
         //veri tabanından ilgili tablodaki tüm veriler getirir.
         IQueryable<T> GetAll();

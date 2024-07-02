@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OnionArcAndAPI.Domain.Entities.Common;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,16 +10,20 @@ namespace OnionArcAndAPI.Application.Repositories
     /*
      Veri tabanına yazdırma servislerinin arayüzleri burada tanımlanır
      */
-    public interface IWriteRepository<T> :IRepository<T> where T : class
+    public interface IWriteRepository<T> :IRepository<T> where T : BaseEntity
     {
-        Task<bool> AddAsync(T model);
+        Task<bool> AddAsync(T model);  //TASK YAPILANMASI ASYNC İŞ KODLARI İÇİN KULLANILMAKTADIR.
 
-        Task<bool> AddAsync(List<T> model);
+        Task<bool> AddRangeAsync(List<T> datas);
 
-        Task<bool> UpdateAsync(T model);
+        bool Update(T model);
 
-        Task<bool> Remove(T model);
+        bool Remove(T model);
 
-        Task<bool> Remove(string id);
+        bool RemoveRange(List<T> datas);    
+
+         Task<bool> RemoveAsync(string id);
+
+        Task<int> SaveAsync();
     }
 }
