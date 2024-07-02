@@ -1,6 +1,7 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 using OnionArcAndAPI.Application.Abstractions;
-using OnionArcAndAPI.Persistence.Concretes;
+using OnionArcAndAPI.Persistence.Contexts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +14,9 @@ namespace OnionArcAndAPI.Persistence
     {
         public static void AddPersistenceService(this IServiceCollection services) {
 
-            services.AddSingleton<IProductService,ProductService>();  
+   
+            //UseNpgsql postgresql'dir burada seçmek için persistence katmanına nuget managerden Postgressql'i yükledik
+            services.AddDbContext<OnionArcAndAPIDbContext>(options => options.UseSqlServer("server=DESKTOP-EKSE2T7;database=OnionArcAndAPIDb;integrated security=true ;TrustServerCertificate=True"));
         }  
     }
 }

@@ -11,6 +11,6 @@ namespace OnionArcAndAPI.Domain.Entities.Common
         //Bir Müşterinin birden fazla siparişi olabileceğini ifade eder.Aynı şeyi Order entity'si için yapmayız çünkü
         //bir siparişin birden fazla müşteri yoktur.
         public ICollection<Order> Orders { get; set; }
-        pıb     
+          
     }
 }
