@@ -55,16 +55,17 @@ namespace OnionArcAndAPI.Persistence.Concretes
         }
 
        
-        public Task<int> SaveAsync()
-        {
-            throw new NotImplementedException();
-        }
+        public async Task<int> SaveAsync()
+       =>await _Context.SaveChangesAsync();
 
         public bool Update(T model)
         {
             EntityEntry<T>  entityEntry = Table.Update(model);
             return entityEntry.State == EntityState.Modified;
         }
+
+
+
 
         
     }
