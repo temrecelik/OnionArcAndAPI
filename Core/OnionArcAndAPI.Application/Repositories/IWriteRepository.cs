@@ -22,8 +22,10 @@ namespace OnionArcAndAPI.Application.Repositories
 
         bool RemoveRange(List<T> datas);    
 
-         Task<bool> RemoveAsync(string id);
+        Task<bool> RemoveAsync(string id);
 
         Task<int> SaveAsync();
+
+            
     }
 }

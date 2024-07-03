@@ -14,9 +14,4 @@
     <ProjectReference Include="..\OnionArcAndAPI.Domain\OnionArcAndAPI.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Repositories\Product\" />
-    <Folder Include="Repositories\Order\" />
-  </ItemGroup>
-
 </Project>

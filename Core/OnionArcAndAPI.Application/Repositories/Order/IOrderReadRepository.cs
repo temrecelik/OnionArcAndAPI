@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace OnionArcAndAPI.Application.Repositories
 {
-    public interface ICustomerWriteRepository :IWriteRepository<Customer>
+    public interface IOrderReadRepository : IReadRepository<Order>
     {
     }
 }
